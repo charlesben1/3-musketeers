@@ -8,6 +8,13 @@ const config = new Conf();
 
 updateNotifier({pkg}).notify();
 
+/**
+ * @constructor saveCurrencies = fonction pour changer les devises "par defaut"
+The starting currencies are USD, EUR and GBP
+ * @param {string} DefautTo - New defaut currency wanted
+ * @param {string} defautFrom - Old currency switched
+
+ */
 const saveCurrencies = argv => {
   config.set('defaultFrom', argv[1] || config.get('defaultFrom', 'USD'));
   config.set(
@@ -19,12 +26,19 @@ const saveCurrencies = argv => {
   console.log(chalk.green('Saved default currencies to ' + config.path));
   process.exit(1);
 };
-
+/**
+ Display of the actual version of the software
+ */
 const version = () => {
   console.log(pkg.version);
   process.exit(1);
 };
 
+/**
+
+HELP menu -- Display of the differents options
+
+ */
 const help = () => {
   console.log(`
 Usage:
@@ -56,7 +70,9 @@ Examples:
   `);
   process.exit(1);
 };
-
+/**
+Differents methods that the user can use
+ */
 const helpers = argv => {
   // Version
   if (argv.indexOf('--version') !== - 1 || argv.indexOf('-v') !== - 1) {

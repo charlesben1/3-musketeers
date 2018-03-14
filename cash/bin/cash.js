@@ -5,6 +5,19 @@ const chalk = require('chalk');
 const ora = require('ora');
 const currencies = require('../lib/currencies.json');
 
+/**
+ * @constructor configuration = Mise en place du convertisseur
+ * @param {float} amount - Amount of money to convert
+
+ * @param {string} to - Currency wanted
+ * @param {string} from - Currency of the amount
+ * @param {string} response - result
+ * @param {string} loading - check if there are any errors
+
+
+
+ */
+
 const API = 'https://api.fixer.io/latest';
 
 const convert = configuration => {
@@ -33,6 +46,20 @@ const convert = configuration => {
   );
   process.exit(1);
 };
+
+/**
+ * @constructor command = Request initiated
+ * @param {string} amount - Amount of money to convert
+
+ * @param {string} to - Currency wanted
+ * @param {string} from - Currency of the amount
+ * @param {string} response - result
+ * @param {string} loading - check if there are any errors
+
+
+
+ */
+
 
 const cash = async command => {
   const amount = command.amount;

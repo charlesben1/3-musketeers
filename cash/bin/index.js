@@ -10,6 +10,13 @@ const argv = process.argv.slice(2);
 
 helpers(argv);
 
+/**
+ * @constructor command = return of the values entered by the user
+ *@param {float} amount - Value to convert
+ * @param {string} from - Initial currency
+ * @param {string} to - currency wanted
+
+ */
 const command = {
   'amount': argv[0] || 1,
   'from': argv[1] || config.get('defaultFrom', 'USD'),
